@@ -3,14 +3,24 @@
 import { useCartStore } from "@/stores/cart-store"
 import { Button } from '@/components/ui/button'
 import { CartItem } from '@/components/ui/cart/cart-item'
+import { toast } from "sonner"
+import { useRouter } from "next/navigation"
 
 export default function Cart() {
+  const router = useRouter()
   const { items, removeItem, updateQuantity, clearCart } = useCartStore()
   
   const total = items.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
     0
   )
+
+  const onSubmit = async() => {
+    toast.success("Ваш заказ оформлен!")
+    await new Promise(resolve => setTimeout(resolve, 2000)) 
+    clearCart()
+    router.push('/')
+  }
 
   return (
     <div className="space-y-4">
@@ -41,7 +51,7 @@ export default function Cart() {
               >
                 Очистить корзину
               </Button>
-              <Button className="flex-1">Оформить заказ</Button>
+              <Button onClick={onSubmit} className="flex-1">Оформить заказ</Button>
             </div>
           </div>
         </>
