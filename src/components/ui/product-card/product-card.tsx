@@ -22,7 +22,7 @@ const ProductCardComponent = ({ product }: { product: Product }) => {
         />
       </Link>
       <CardHeader>
-        <CardTitle className="text-lg">{product.title}</CardTitle>
+        <CardTitle className="text-lg "> <Link href={`/product/${product.id}`}>{product.title}</Link></CardTitle>
         <CardDescription>
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">

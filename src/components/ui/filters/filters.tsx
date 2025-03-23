@@ -52,7 +52,7 @@ export function Filters({
         <div className="space-y-2">
           <Label>Категория</Label>
           <Select value={category} onValueChange={setCategory}>
-            <SelectTrigger className='min-w-[160px]'>
+            <SelectTrigger className='min-w-[160px] cursor-pointer'>
               <SelectValue placeholder="Все категории" />
             </SelectTrigger>
             <SelectContent>
@@ -69,7 +69,7 @@ export function Filters({
         <div className="space-y-2">
           <Label>Сортировка</Label>
           <Select value={sort} onValueChange={setSort}>
-            <SelectTrigger  className='min-w-[160px]'>
+            <SelectTrigger  className='min-w-[160px] cursor-pointer'>
               <SelectValue placeholder="По умолчанию" />
             </SelectTrigger>
             <SelectContent>
@@ -88,6 +88,7 @@ export function Filters({
             step={10}
             value={priceRange}
             onValueChange={(value) => setPriceRange(value as [number, number])}
+            className='cursor-pointer'
           />
           <div className="flex justify-between text-sm">
             <span>${priceRange[0]}</span>
