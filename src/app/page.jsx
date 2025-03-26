@@ -18,6 +18,9 @@
 
 import Form from 'next/form'
 import SearchButton from '@/components/button/buttonForm'
+import Users from '@/components/users/users'
+import { Suspense } from 'react'
+
 
 const fetchUsers = async (url) => {
 
@@ -43,7 +46,7 @@ export default async function GetUsers({
 
     const results = (await searchParams).name || ''
     const url = getUrl(results)
-    const users = await fetchUsers(url)
+    // const users = await fetchUsers(url)
 
     return (
         <div className="mt-[100px]">
@@ -51,13 +54,9 @@ export default async function GetUsers({
                 <input name="name" />      
             <SearchButton />         
             </Form>
-            <ul>
-                {users.map(user => (
-                    <li key={user.id}>
-                        {user.name}
-                    </li>
-                ))}
-            </ul>
+            <Suspense fallback={<div>loading.....</div>}>
+                <Users users={fetchUsers(url)}/> 
+           </Suspense>  
         </div>
     )
 }
