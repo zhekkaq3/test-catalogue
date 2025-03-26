@@ -54,7 +54,7 @@ export default async function GetUsers({
                 <input name="name" />      
             <SearchButton />         
             </Form>
-            <Suspense fallback={<div>loading.....</div>}>
+            <Suspense key={url} fallback={<div>loading.....</div>}>
                 <Users users={fetchUsers(url)}/> 
            </Suspense>  
         </div>
