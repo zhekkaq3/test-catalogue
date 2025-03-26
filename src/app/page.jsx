@@ -17,7 +17,7 @@
 // }
 
 import Form from 'next/form'
-
+import SearchButton from '@/components/button/buttonForm'
 
 const fetchUsers = async (url) => {
 
@@ -49,7 +49,7 @@ export default async function GetUsers({
         <div className="mt-[100px]">
             <Form action='/'>
                 <input name="name" />      
-                <button type='submit'>Submit</button>            
+            <SearchButton />         
             </Form>
             <ul>
                 {users.map(user => (
