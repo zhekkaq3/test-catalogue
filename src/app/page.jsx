@@ -51,7 +51,7 @@ export default async function GetUsers({
     return (
         <div className="mt-[100px]">
             <Form action='/'>
-                <input name="name" />      
+                <input className='bg-accent mb-3' name="name" />      
             <SearchButton />         
             </Form>
             <Suspense key={url} fallback={<div>loading.....</div>}>
