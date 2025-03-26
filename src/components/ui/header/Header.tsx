@@ -1,13 +1,13 @@
 
 import { ModeToggle } from "@/components/ui/theme/toggle";
-import Link from "next/link";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import CartLink from "../cart/cart-link";
+// import Link from "next/link";
+// import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+// import CartLink from "../cart/cart-link";
 
 export default function Header() {
   return (
     <div className="fixed z-10 top-0 left-0 w-full flex justify-between p-4 border-b backdrop-blur">
-      <NavigationMenu>
+      {/* <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
@@ -24,7 +24,7 @@ export default function Header() {
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
-      </NavigationMenu>
+      </NavigationMenu> */}
 
       <ModeToggle />
     </div>
